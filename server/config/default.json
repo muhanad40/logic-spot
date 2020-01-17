@@ -1,0 +1,114 @@
+{
+  "appName": "falcon-server-demo",
+  "debug": false,
+  "port": 4000,
+  "logLevel": "info",
+  "verboseEvents": false,
+  "endpoints": {
+    "magento": {
+      "package": "@deity/falcon-magento2-api/src/endpoints",
+      "config": {
+        "protocol": "https",
+        "host": "magento.deity.io"
+      }
+    }
+  },
+  "apis": {
+    "wordpress": {
+      "package": "@deity/falcon-wordpress-api",
+      "config": {
+        "host": "wordpress.deity.io",
+        "protocol": "https",
+        "apiPrefix": "/wp-json/wp/v2"
+      }
+    },
+    "magento2": {
+      "package": "@deity/falcon-magento2-api",
+      "config": {
+        "host": "magento.deity.io",
+        "protocol": "https",
+        "auth": {
+          "type": "integration-token",
+          "consumerKey": "ck53dt5e5i9mn9qy3r54t4s9ihhcuby5",
+          "consumerSecret": "wdhg6ni0nghlw752z3fgluacoyolz8ni",
+          "accessToken": "m5tz9nm2yfxa44nbgpmniyt03uract6p",
+          "accessTokenSecret": "lhbo8tyc8egqzdzk74cvsoeeccbb1747"
+        },
+        "payments": {
+          "adyen_cc": {
+            "key": "10001|92982E043FE2161016A936B41A845A312BD4872B0D20A8AF9B7D92DE754334EE734820F098ECF543015082752A0BABE144AD580CF62502345F4931FDADB1F0220E3CD1128F08CC96C952F9E6B275A172CFFB22352CA50253E15BF9A58C68F8C1BAFB305B8B984D5F95D0F7C85897A8888C189388320641107CE6D793FB711EC93863440D43ED63AE3A7E672345F2E8BA062C7FD240E08DEB5EF1B101DEDD608AD804B2250EA6CA4BE337A4FDF4DDE5FDB1C5AE18183461839C1D88C96872D2C6ABCC97A61912127532F878A07CA1ABCCA9EE980336FD1DD54799A6390A410180ABEC5ADB456A867267142A2B5EF8D7177CFD8FA8988D18E02867A049AA784581"
+          }
+        },
+
+        "currency": {
+          "symbol": "EUR"
+        },
+
+        "demo": true,
+        "enableSwitcher": true,
+        "enableAutoDetection": false,
+        "geoMapping": {
+          "*": "default",
+          "NL": "nl_store",
+          "PL": "pl_store",
+          "FR": "fr_store",
+          "DE": "de_store"
+        },
+        "languageMapping": {
+          "en": ["*"],
+          "nl": ["nl_store"],
+          "pl": ["pl_store"],
+          "de": ["de_store"],
+          "fr": ["fr_store"]
+        },
+        "defaultStoreCode": "default",
+        "codeMapping": {
+          "default": "default",
+          "nl_store": "nl_store",
+          "pl_store": "pl_store",
+          "fr_store": "fr_store",
+          "de_store": "de_store"
+        }
+      }
+    }
+  },
+  "extensions": {
+    "blog": {
+      "package": "@deity/falcon-blog-extension",
+      "config": {
+        "api": "wordpress"
+      }
+    },
+    "shop": {
+      "package": "@deity/falcon-shop-extension",
+      "config": {
+        "api": "magento2"
+      }
+    }
+  },
+  "session": {
+    "keys": ["secret key"],
+    "options": {
+      "key": "session-key",
+      "maxAge": 86400000,
+      "overwrite": true,
+      "httpOnly": true,
+      "signed": true,
+      "rolling": false,
+      "renew": false
+    }
+  },
+  "cache": {
+    "url": "/cache",
+    "resolvers": {
+      "enabled": true,
+      "invalidation": true,
+      "default": {
+        "ttl": 10
+      },
+      "query.menu": {
+        "ttl": 15
+      }
+    }
+  }
+}
