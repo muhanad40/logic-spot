@@ -11,7 +11,7 @@ import { OpenSidebarMutation } from '@deity/falcon-ecommerce-uikit';
 import { ProductConfigurator } from './ProductConfigurator';
 import { Price } from '@deity/falcon-ecommerce-uikit';
 import { toGridTemplate } from '@deity/falcon-ecommerce-uikit';
-import { ProductData } from './ProductQuery';
+import ProductReviews from '../ProductReviews';
 
 export const ProductLayout = themed({
   tag: 'div',
@@ -34,7 +34,8 @@ const Area = {
   meta: 'meta',
   empty: 'empty',
   options: 'options',
-  error: 'error'
+  error: 'error',
+  reviews: 'reviews'
 };
 
 export const ProductDetailsLayout = themed({
@@ -55,6 +56,7 @@ export const ProductDetailsLayout = themed({
           [Area.error      ],
           [Area.options    ],
           [Area.cta        ],
+          [Area.reviews    ],
           [Area.description],
           [Area.meta       ]
         ]),
@@ -66,6 +68,7 @@ export const ProductDetailsLayout = themed({
           [Area.gallery,   Area.price             ],
           [Area.gallery,   Area.options           ],
           [Area.gallery,   Area.cta               ],
+          [Area.gallery,   Area.reviews           ],
           [Area.gallery,   Area.error             ],
           [Area.gallery,   Area.description, '1fr'],
           [Area.gallery,   Area.meta              ]
@@ -238,6 +241,7 @@ export class Product extends React.PureComponent {
                       {t('product.addToCart')}
                     </Button>
                   </FlexLayout>
+                  <ProductReviews />
                   <Box gridArea={Area.error}>
                     <ErrorMessage name="qty" render={msg => <Text color="error">{msg}</Text>} />
                     {!!error && <Text color="error">{error.message}</Text>}

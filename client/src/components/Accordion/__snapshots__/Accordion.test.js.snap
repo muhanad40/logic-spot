@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion should render correctly 1`] = `
+<Fragment>
+  <styled.div
+    data-test-role="accordion-title"
+    onClick={[Function]}
+  >
+    Accordion title...
+  </styled.div>
+</Fragment>
+`;
