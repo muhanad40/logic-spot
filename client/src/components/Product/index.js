@@ -1,0 +1,1 @@
+export default () => <div>"Product" component replaced!</div>
