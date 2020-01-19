@@ -1,5 +1,4 @@
 import React from 'react';
-import { FalconClientMock } from '@deity/falcon-client/test-utils';
 import { shallow } from 'enzyme';
 
 import Accordion from ".";
