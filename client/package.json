@@ -36,6 +36,9 @@
     "apollo-client": "2.5.1",
     "config": "^2.0.1",
     "cross-env": "5.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.3",
     "formik": "^1.5.8",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.9.2",
@@ -49,7 +52,8 @@
     "react-helmet": "^5.2.0",
     "react-powerplug": "1.0.0",
     "react-router-dom": "5.0.0",
-    "styled-components": "4.3.2"
+    "styled-components": "4.3.2",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
     "@deity/eslint-config-falcon": "^0.1.4",
@@ -58,5 +62,13 @@
     "eslint": "6.1.0",
     "full-icu": "^1.2.1",
     "jest-transform-graphql": "^2.1.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
