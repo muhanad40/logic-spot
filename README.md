@@ -1,64 +1,38 @@
-# Shop with Blog Example
+# Product reviews technical test
 
-This is a template which is used by [`create-falcon-app`](https://github.com/deity-io/falcon/tree/master/packages/create-falcon-app) to create a shop with blog app.
+This is a small project that attempts to render dummy comments on a product page. This project uses [Deity Falcon](https://falcon.deity.io/).
 
-## Quick Start
+## How to run it
 
-The best place to start is to use [`create-falcon-app`](https://github.com/deity-io/falcon/tree/master/packages/create-falcon-app#create-falcon-app). 
+Open two terminal tabs:
 
-Or download the example [or clone the whole project](https://github.com/deity-io/falcon.git):
-
-Install it and run:
-
+#### Terminal 1 - Run the client:
 ```bash
+git clone https://github.com/muhanad40/logic-spot.git
+cd logic-spot/client
 yarn install
 yarn start
+# or you can run product build with:
+yarn start:prod
 ```
 
-Then open http://localhost:3000/ to see your app.
+#### Terminal 2 - Run the server:
+```bash
+git clone https://github.com/muhanad40/logic-spot.git
+cd logic-spot/server
+yarn install
+yarn start
+# or you can run product build with:
+yarn start:prod
+```
 
-**That's it**. Just start editing `./src/App.js` and go!
+Point your browser to http://localhost:3000/ to see the demo e-commerce store. Browser to a product page and you'll see dummy review comments under the `Add to Cart` button.
 
-## Testing
+## Running the client unit tests
 
 To run tests:
 
 ```bash
+cd logic-spot/client
 yarn test
 ```
-
-This will run the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-
-## Debugging
-
-To run with debugger:
-
-```bash
-yarn start:dbg
-```
-
-This will start application with enabled inspector agent.
-
-If the server should wait till debugger will attache then run:
-
-```bash
-yarn start:dbg-brk
-```
-
-For more information, see [`falcon-client start`](https://github.com/deity-io/falcon/tree/locales/packages/falcon-client#falcon-client-start------inspecthostport) command.
-
-## Production package
-
-To build and run production package:
-
-```bash
-yarn build
-yarn start:prod
-```
-
-You could view your application at http://localhost:3000
-
-## More information
-
-If you would like to find more information please check out the official documentation website [https://falcon.deity.io/](https://falcon.deity.io/)
