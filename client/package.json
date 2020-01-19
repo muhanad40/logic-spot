@@ -52,7 +52,8 @@
     "react-helmet": "^5.2.0",
     "react-powerplug": "1.0.0",
     "react-router-dom": "5.0.0",
-    "styled-components": "4.3.2"
+    "styled-components": "4.3.2",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
     "@deity/eslint-config-falcon": "^0.1.4",

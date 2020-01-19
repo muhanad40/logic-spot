@@ -14,6 +14,14 @@
     }
   },
   "apis": {
+    "comments-api": {
+      "package": "./reviews-api.js",
+      "config": {
+        "host": "jsonplaceholder.typicode.com",
+        "protocol": "https",
+        "apiPrefix": "/"
+      }
+    },
     "wordpress": {
       "package": "@deity/falcon-wordpress-api",
       "config": {
@@ -73,6 +81,12 @@
     }
   },
   "extensions": {
+    "comments": {
+      "package": "./reviews-extension.js",
+      "config": {
+        "api": "comments-api"
+      }
+    },
     "blog": {
       "package": "@deity/falcon-blog-extension",
       "config": {
