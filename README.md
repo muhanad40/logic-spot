@@ -2,6 +2,9 @@
 
 This is a small project that attempts to render dummy comments on a product page. This project uses [Deity Falcon](https://falcon.deity.io/).
 
+## Important note:
+I've tried to get a unit test to work that verifies the `ProductReviews` component does the correct GraphQL request, but for some unknow reasons it doesn't work. I've spent too much time investigating this so I've decided to leave the test file incomplete with some comments.
+
 ## How to run it
 
 Open two terminal tabs:
